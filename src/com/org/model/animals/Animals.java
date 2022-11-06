@@ -6,6 +6,7 @@ import com.org.model.enums.Gender;
 
 public abstract class Animals<T>{
     private String name;
+    private String name22;
     private Gender gender;
     protected Animals() {}
 
