@@ -1,12 +1,19 @@
 package com.org.model.animals;
 
-import com.org.model.Location;
-
 public class Island {
     private static final int rows = 10;
     private static final int columns = 10;
+    Location[][] locations;
 
-    Location[][] locations = new Location[rows][columns];
+    public Island( ) {
+        this.locations = new Location[rows][columns];
+    }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
 
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
 }

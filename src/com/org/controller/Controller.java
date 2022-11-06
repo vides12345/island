@@ -1,9 +1,5 @@
 package com.org.controller;
 
-import com.org.model.Location;
-
-import java.util.Random;
-
 public class Controller {
 
 

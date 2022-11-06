@@ -14,7 +14,7 @@ public class ModelDAO {
         ModelDAO modelDAO = new ModelDAO();
     }
 
-    void createNewAnimals() {
+    void addNewAnimals() {
 
     }
 
@@ -29,11 +29,9 @@ public class ModelDAO {
     void removeAnimals() {
 
     }
-
 }
-
-class AnimalFactory {
-    public Animals createCat(AnimalType type) {
+    class AnimalFactory {
+    public static Animals createAnimal(AnimalType type) {
         Animals<? extends Animals> animal = null;
 
         switch (type) {
