@@ -7,7 +7,7 @@ import com.org.model.enums.Gender;
 public abstract class Animals<T>{
     private String name;
     private Gender gender;
-    public Animals() {}
+    protected Animals() {}
 
     abstract void multiply(Animals<T> animalsF, Animals<T> animalsM);
 
