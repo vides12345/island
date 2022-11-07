@@ -1,5 +1,6 @@
 package com.org.model;
 
+import com.org.Service;
 import com.org.model.animals.Animals;
 import com.org.model.enums.AnimalType;
 
@@ -17,22 +18,21 @@ public class LocationDAO {
         AnimalType[] values = AnimalType.values();
         int seedOfAnimals;
         for (AnimalType value : values) {
-            for (int i = 0; i < randomTypeOfAnimals(value.getMaxPopulation()); i++) {
-                System.out.println(AnimalFactory.createAnimal(value));
+            List<? super Animals> animals = new ArrayList<>();
+            System.out.println(value.toString() + " " + value.getMaxPopulation());
+            int randomTypeOfAnimals = Service.randomTypeOfAnimals(value.getMaxPopulation());
+            System.out.println(randomTypeOfAnimals);
+            for (int i = 0; i < randomTypeOfAnimals; i++) {
+                animals.add(AnimalFactory.createAnimal(value));
             }
-
-
+            System.out.println(animals);
         }
 
         list.add(map);
         return list;
     }
 
-    public int randomTypeOfAnimals(int seed) {
-        Random random = new Random();
-        return 3+ random.nextInt(seed-2);
 
-    }
 
     public static void main(String[] args) {
         LocationDAO locationDAO = new LocationDAO();
