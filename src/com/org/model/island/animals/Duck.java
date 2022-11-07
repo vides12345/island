@@ -1,8 +1,8 @@
-package com.org.model.animals;
+package com.org.model.island.animals;
 
 import com.org.model.interfaces.Carnivores;
 import com.org.model.interfaces.Herbivores;
-import com.org.model.vegetable.Vegatable;
+import com.org.model.island.animals.vegetable.Vegatable;
 
 public class Duck extends Animals implements Carnivores, Herbivores {
     private static int weight =1;

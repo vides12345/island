@@ -1,10 +1,10 @@
 package com.org.model.enums;
 
 public enum AnimalType  {
-    WOLF(30),
-    DEER(20),
-    DUCK(200),
-    CATERPILLAR(1000);
+    WOLF(10),//30
+    DEER(10),//20
+    DUCK(10),//200
+    CATERPILLAR(100);//1000
    private int maxPopulation;
 
     AnimalType(int maxPopulation) {

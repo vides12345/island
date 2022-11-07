@@ -1,4 +1,4 @@
-package com.org.model.animals;
+package com.org.model.island.animals;
 
 import com.org.model.interfaces.Carnivores;
 import com.org.model.interfaces.Herbivores;

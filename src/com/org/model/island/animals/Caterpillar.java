@@ -1,8 +1,7 @@
-package com.org.model.animals;
+package com.org.model.island.animals;
 
-import com.org.model.enums.Gender;
 import com.org.model.interfaces.Herbivores;
-import com.org.model.vegetable.Vegatable;
+import com.org.model.island.animals.vegetable.Vegatable;
 
 public class Caterpillar extends Animals implements Herbivores {
     private static double weight = 0.01;

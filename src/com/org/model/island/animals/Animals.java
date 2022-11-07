@@ -1,4 +1,4 @@
-package com.org.model.animals;
+package com.org.model.island.animals;
 
 //покушать, размножиться, выбрать направление передвижения
 

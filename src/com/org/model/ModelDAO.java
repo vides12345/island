@@ -1,11 +1,10 @@
 package com.org.model;
 
-import com.org.model.animals.*;
+import com.org.model.island.animals.*;
 import com.org.model.enums.AnimalType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ModelDAO {
     List<? extends Animals> list = new ArrayList<>();

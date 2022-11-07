@@ -1,7 +1,7 @@
-package com.org.model.animals;
+package com.org.model.island.animals;
 
 import com.org.model.interfaces.Herbivores;
-import com.org.model.vegetable.Vegatable;
+import com.org.model.island.animals.vegetable.Vegatable;
 
 public class Deer extends  Animals implements Herbivores {
     private static int weight =300;

@@ -1,6 +1,5 @@
 package com.org;
 
-import com.org.model.animals.Caterpillar;
 import com.org.model.enums.AnimalType;
 
 import java.util.Random;
