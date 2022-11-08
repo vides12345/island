@@ -22,9 +22,11 @@ public class LocationDAO {
         for (AnimalType value : values) {
             List<? super Animals> animals = new ArrayList<>();
             int numberOfOfAnimals = Service.randomTypeOfAnimals(value.getMaxPopulation());
+            System.out.println(numberOfOfAnimals);
             for (int i = 0; i < numberOfOfAnimals; i++) {
                 animals.add(AnimalFactory.createAnimal(value));
             }
+
             list.add((List<? extends Animals>) animals);
         }
         return list;
