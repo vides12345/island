@@ -1,40 +1,56 @@
 package com.org.model.island.animals;
 
 import com.org.model.interfaces.Herbivores;
-import com.org.model.island.animals.vegetable.Vegatable;
+import com.org.model.island.vegetable.Vegatable;
+
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Caterpillar extends Animals implements Herbivores {
-    private static double weight = 0.01;
-    //    private static int maxPopulation=1000;
-    private static int speedByCell = 0;
-    private static double foodRequired = 0;
-    private static int quantityOfCaterpillars = 0;
+//    private static double weight = 0.01;
+//    private static int maxPopulation=1000;
+//    private static int speedByCell = 0;
+//    private static double foodRequired = 0;
 
-    public Caterpillar() {
-        quantityOfCaterpillars++;
+    private String name;
+    private Boolean gender; //TRue if Male , False if Femene
+    private static int quantityOfCaterpillar;
+
+    public Caterpillar(String name, Boolean gender) {
+        this.name = name;
+        this.gender = gender;
     }
 
-    public static int getQuantityOfCaterpillars() {
-        return quantityOfCaterpillars;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    void multiply(Animals animalsF, Animals animalsM) {
-
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    void moveInToDirecction() {
-
+    public Boolean getGender() {
+        return gender;
     }
 
-    @Override
-    public void eatVeggie(Vegatable vegatable) {
-
+    public void setGender(Boolean gender) {
+        this.gender = gender;
     }
+
+    public static int getQuantityOfCaterpillar() {
+        return quantityOfCaterpillar;
+    }
+
+    public static void setQuantityOfCaterpillar(int quantityOfCaterpillar) {
+        Caterpillar.quantityOfCaterpillar = quantityOfCaterpillar;
+    }
+
+
 
     @Override
     public String toString() {
-        return "Caterpillar" + getQuantityOfCaterpillars();
+        return  name + '\'' +
+                ", gender=" + gender +
+                '}';
     }
 }

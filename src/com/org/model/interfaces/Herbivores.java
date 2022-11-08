@@ -1,7 +1,8 @@
 package com.org.model.interfaces;
 
-import com.org.model.island.animals.vegetable.Vegatable;
+
+import com.org.model.island.vegetable.Vegatable;
 
 public interface Herbivores {
-    void eatVeggie(Vegatable vegatable);
+//    void eatVeggie(Vegatable vegatable);
 }

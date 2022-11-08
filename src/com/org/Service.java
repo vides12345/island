@@ -14,9 +14,9 @@ public class Service {
         return animalType.name().charAt(0) + animalType.name().substring(1).toLowerCase();
     }
 
-    public static Character getGenderOfAnimal() {
+    public static Boolean getGenderOfAnimal() {
         Random random = new Random();
-        return random.nextBoolean()? 'M':'F';
+        return random.nextBoolean();
     }
 
 
