@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ModelDAO {
-    List<? extends Animals> list = new ArrayList<>();
+    List<? extends Animal> list = new ArrayList<>();
 
     public static void main(String[] args) {
         ModelDAO modelDAO = new ModelDAO();

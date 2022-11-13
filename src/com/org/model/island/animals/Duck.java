@@ -111,10 +111,10 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
 Carnivores eat all kind of Eatable animals
  */
     @Override
-    public Class<? extends Animals> eatMeat(int posibility) {
-        Set<Map.Entry<Class<? extends Animals>, Integer>> entries = map.entrySet();
-        List<Class<? extends Animals>> keys = new ArrayList<>();
-        for (Map.Entry<Class<? extends Animals>, Integer> entry : entries) {
+    public Class<? extends Animal> eatMeat(int posibility) {
+        Set<Map.Entry<Class<? extends Animal>, Integer>> entries = map.entrySet();
+        List<Class<? extends Animal>> keys = new ArrayList<>();
+        for (Map.Entry<Class<? extends Animal>, Integer> entry : entries) {
             if (Objects.equals(posibility, entry.getValue())) {
                  keys.add(entry.getKey());
             }

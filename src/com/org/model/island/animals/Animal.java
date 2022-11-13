@@ -4,7 +4,7 @@ package com.org.model.island.animals;
 
 import com.org.model.enums.Gender;
 
-public abstract class Animal{
+public abstract class Animal<T>{
 
 //    private static int quantityOfAnimals = 0;
 //

@@ -1,6 +1,6 @@
 package com.org.model.island.animals;
 
-public class Wolf  extends Animals {
+public class Wolf  extends Animal {
 
 
 

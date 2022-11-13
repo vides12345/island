@@ -5,6 +5,6 @@ import com.org.model.island.vegetable.Vegatable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Deer extends Animals {
+public class Deer extends Animal {
 
 }

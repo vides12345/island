@@ -8,7 +8,7 @@ import com.org.model.island.vegetable.Vegatable;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Caterpillar extends Animals implements Herbivores {
+public class Caterpillar extends Animal implements Herbivores {
     private static double weight = 0.1;
 //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;

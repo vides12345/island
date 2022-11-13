@@ -3,7 +3,7 @@ package com.org.model;
 import com.org.Service;
 import com.org.model.island.AnimalFactory;
 import com.org.model.island.Location;
-import com.org.model.island.animals.Animals;
+import com.org.model.island.animals.Animal;
 import com.org.model.enums.AnimalType;
 
 import java.util.ArrayList;
