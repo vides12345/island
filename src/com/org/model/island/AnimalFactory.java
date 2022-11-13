@@ -2,13 +2,13 @@ package com.org.model.island;
 
 import com.org.Service;
 import com.org.model.enums.AnimalType;
-import com.org.model.island.animals.Animals;
+import com.org.model.island.animals.Animal;
 import com.org.model.island.animals.Caterpillar;
 import com.org.model.island.animals.Duck;
 
 public class AnimalFactory {
-    public static Animals createAnimal(AnimalType type) {
-        Animals<? extends Animals> animal = null;
+    public static Animal createAnimal(AnimalType type) {
+        Animal<? extends Animal> animal = null;
         String name;
 
         switch (type) {

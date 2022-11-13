@@ -1,6 +1,6 @@
 package com.org.model.island.vegetable;
 
-public abstract class Vegatable  {
+public  class Vegatable  {
     private double initialWeight=200;
 
     public double getInitialWeight() {
@@ -11,5 +11,5 @@ public abstract class Vegatable  {
         this.initialWeight = initialWeight;
     }
 
-    abstract void grow();
+      void grow(){};
 }
