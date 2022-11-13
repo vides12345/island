@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Caterpillar extends Animals implements Herbivores {
-    private static double weight = 0.01;
+    private static double weight = 0.1;
 //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;
-//    private static double foodRequired = 0;
+    private static double foodRequired = 0.01;
 
 
     private String name;
@@ -21,6 +21,9 @@ public class Caterpillar extends Animals implements Herbivores {
     private static int quantityOfMale;
     private static int quantityOfFemale;
 
+
+    public Caterpillar() {
+    }
 
     public Caterpillar(String name, Boolean gender) {
         this.name = name;
@@ -59,6 +62,14 @@ public class Caterpillar extends Animals implements Herbivores {
         Caterpillar.weight = weight;
     }
 
+    public static double getFoodRequired() {
+        return foodRequired;
+    }
+
+    public static void setFoodRequired(double foodRequired) {
+        Caterpillar.foodRequired = foodRequired;
+    }
+
     public static int getQuantityOfMale() {
         return quantityOfMale;
     }
@@ -84,10 +95,22 @@ public class Caterpillar extends Animals implements Herbivores {
 
     @Override
     public Double eatVeggie(Vegatable vegatable) {
-        if (vegatable.getInitialWeight() >= getWeight()) {
-            setWeight(getWeight() + 0.1);
-            vegatable.setInitialWeight(vegatable.getInitialWeight() - 0.1);
+        if (vegatable.getInitialWeight() >= this.getWeight()) {
+            setWeight(getWeight() + getFoodRequired());
+            vegatable.setInitialWeight(vegatable.getInitialWeight() - getWeight());
         }
-        return getWeight();
+        return this.getWeight();
+    }
+
+    public static void main(String[] args) {
+        Caterpillar caterpillar = new Caterpillar();
+        System.out.println("Caterpillar  "+Caterpillar.getWeight());
+        Vegatable vegatable = new Vegatable();
+        System.out.println("veggie "+vegatable.getInitialWeight());
+        for (int i = 0; i < 10; i++) {
+            caterpillar.eatVeggie(vegatable);
+        }
+        System.out.println("veggie "+vegatable.getInitialWeight());
+        System.out.println("Caterpillar  "+Caterpillar.getWeight());
     }
 }

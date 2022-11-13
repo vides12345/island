@@ -2,19 +2,20 @@ package com.org.model.island.animals;
 
 import com.org.Service;
 import com.org.model.interfaces.Carnivore;
+import com.org.model.interfaces.Eatable;
 import com.org.model.interfaces.Herbivores;
 import com.org.model.island.vegetable.Vegatable;
 
 import java.awt.image.ImageProducer;
 import java.util.*;
 
-public class Duck extends Animals implements Carnivore, Herbivores {
+public class Duck extends Animals implements Carnivore, Herbivores, Eatable {
     private static Map<Class<? extends Animals>, Integer> map = new HashMap<>();
     private static double weight = 1;
 
     //    private static int maxPopulation=200;
     //    private static int speedByCell=4;
-    //    private static double foodRequired=0.15;
+        private static double foodRequired=0.15;
     static {
         map.put(Deer.class, 90);
         map.put(Wolf.class, 90);
@@ -82,7 +83,13 @@ public class Duck extends Animals implements Carnivore, Herbivores {
         Duck.weight = weight;
     }
 
+    public static double getFoodRequired() {
+        return foodRequired;
+    }
 
+    public static void setFoodRequired(double foodRequired) {
+        Duck.foodRequired = foodRequired;
+    }
 
     @Override
     public String toString() {
@@ -94,8 +101,8 @@ public class Duck extends Animals implements Carnivore, Herbivores {
     @Override
     public Double eatVeggie(Vegatable vegatable) {
         if (vegatable.getInitialWeight() >= getWeight()) {
-            setWeight(getWeight() + 0.15);
-            vegatable.setInitialWeight(vegatable.getInitialWeight() - 0.15);
+            setWeight(getWeight() + getFoodRequired());
+            vegatable.setInitialWeight(vegatable.getInitialWeight() - getFoodRequired());
         }
         return getWeight();
     }
@@ -125,10 +132,18 @@ Carnivores eat all kind of Eatable animals
 
     public static void main(String[] args) {
         Duck duck = new Duck();
+//        for (int i = 0; i < 10; i++) {
+//            Class<? extends Animals> aClass = duck.eatMeat(90);
+//            System.out.println(aClass);
+//        }
+        Duck caterpillar = new Duck();
+        System.out.println("Caterpillar  "+Duck.getWeight());
+        Vegatable vegatable = new Vegatable();
+        System.out.println("veggie "+vegatable.getInitialWeight());
         for (int i = 0; i < 10; i++) {
-            Class<? extends Animals> aClass = duck.eatMeat(90);
-            System.out.println(aClass);
+            caterpillar.eatVeggie(vegatable);
         }
-
+        System.out.println("veggie "+vegatable.getInitialWeight());
+        System.out.println("Caterpillar  "+Duck.getWeight());
     }
 }
