@@ -2,10 +2,24 @@ package com.org.view;
 
 import com.org.Service;
 
-public class Consol {
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+public class Consol implements View{
 
 
-    public void print() {
+    @Override
+    public void write(String message) {
+        System.out.println(message);
+    }
 
+    @Override
+    public String read() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextLine();
+        } catch (NoSuchElementException e) {
+            return null;
+        }
     }
 }

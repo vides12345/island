@@ -7,7 +7,7 @@ import java.util.Random;
 public class Service {
     public static int randomTypeOfAnimals(int seed) {
         Random random = new Random();
-        return 3+ random.nextInt(seed-2);
+        return   random.nextInt(seed );
     }
 
     public static String getNameFromEnumType(AnimalType animalType) {

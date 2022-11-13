@@ -27,6 +27,7 @@ public class AnimalFactory {
             case CATERPILLAR:
                 Caterpillar.setQuantityOfCaterpillar(Caterpillar.getQuantityOfCaterpillar() + 1);
                 name = Service.getNameFromEnumType(type) + (Caterpillar.getQuantityOfCaterpillar());
+
                 animal = new Caterpillar(name, Service.getGenderOfAnimal());
                 break;
         }
