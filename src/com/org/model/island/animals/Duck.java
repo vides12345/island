@@ -1,55 +1,67 @@
 package com.org.model.island.animals;
 
 import com.org.Service;
+import com.org.model.enums.AnimalType;
 import com.org.model.interfaces.Carnivore;
 import com.org.model.interfaces.Eatable;
 import com.org.model.interfaces.Herbivores;
+import com.org.model.island.AnimalFactory;
 import com.org.model.island.vegetable.Vegatable;
 
 import java.awt.image.ImageProducer;
 import java.util.*;
 
 public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
+
     private static Map<Class<? extends Animal>, Integer> map = new HashMap<>();
     private static double weight = 1;
 
     //    private static int maxPopulation=200;
     //    private static int speedByCell=4;
-        private static double foodRequired=0.15;
+    private static double foodRequired = 0.15;
+
     static {
-        map.put(Deer.class, 90);
-        map.put(Wolf.class, 90);
+//        map.put(Deer.class, 90);
+//        map.put(Wolf.class, 90);
         map.put(Caterpillar.class, 90);
     }
-    private String name;
-    private Boolean gender; //TRue if Male , False if Femene
+
+//    private String name;
+//    private Boolean gender; //TRue if Male , False if Femene
     private static int quantityOfDuck;
     private static int quantityOfMale;
     private static int quantityOfFemale;
 
-    public Duck(String name, Boolean gender) {
-        this.name = name;
-        this.gender = gender;
-    }
+//    public Duck(String name, Boolean gender) {
+//        this.name = name;
+//        this.gender = gender;
+//    }
+//
+//    public Duck() {
+//    }
 
     public Duck() {
     }
 
-    public String getName() {
-        return name;
+    public Duck(String name, Boolean gender) {
+        super(name, gender);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Boolean getGender() {
-        return gender;
-    }
-
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public Boolean getGender() {
+//        return gender;
+//    }
+//
+//    public void setGender(Boolean gender) {
+//        this.gender = gender;
+//    }
 
     public static int getQuantityOfDuck() {
         return quantityOfDuck;
@@ -91,12 +103,12 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         Duck.foodRequired = foodRequired;
     }
 
-    @Override
-    public String toString() {
-        return name + '\'' +
-                ", gender=" + gender +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return name +
+//                ", gender=" + gender +
+//                '}';
+//    }
 
     @Override
     public Double eatVeggie(Vegatable vegatable) {
@@ -107,32 +119,42 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         return getWeight();
     }
 
-/*
-Carnivores eat all kind of Eatable animals
- */
+    /*
+    Carnivores eat all kind of Eatable animals
+     */
     @Override
     public Class<? extends Animal> eatMeat(int posibility) {
         Set<Map.Entry<Class<? extends Animal>, Integer>> entries = map.entrySet();
         List<Class<? extends Animal>> keys = new ArrayList<>();
         for (Map.Entry<Class<? extends Animal>, Integer> entry : entries) {
             if (Objects.equals(posibility, entry.getValue())) {
-                 keys.add(entry.getKey());
+                keys.add(entry.getKey());
             }
         }
         //choice one from set
         if (keys.size() > 0) {
             //return animal
             int index = Service.randomTypeOfAnimals(keys.size());
-            System.out.println("index           "+ index);
+            System.out.println("index           " + index);
             System.out.println(keys);
             return keys.get(index);
         }
         return null;
     }
 
-    public void multiply() {
+//    @Override
+//      public Animal<? extends Animal> multiply(Animal  animal) {
+//        if (animal instanceof Duck) {
+//            Duck duck = (Duck) animal;
+//            if (!duck.getGender().equals(this.getGender())) {
+//                Duck duckNew = (Duck) AnimalFactory.createAnimal(AnimalType.DUCK);
+//                System.out.println("new  " + duckNew);
+//                return duckNew;
+//            }
+//        }
+//        return null;
+//    }
 
-    }
 
     public static void main(String[] args) {
         Duck duck = new Duck();
@@ -140,14 +162,26 @@ Carnivores eat all kind of Eatable animals
 //            Class<? extends Animals> aClass = duck.eatMeat(90);
 //            System.out.println(aClass);
 //        }
-        Duck caterpillar = new Duck();
-        System.out.println("Caterpillar  "+Duck.getWeight());
-        Vegatable vegatable = new Vegatable();
-        System.out.println("veggie "+vegatable.getInitialWeight());
-        for (int i = 0; i < 10; i++) {
-            caterpillar.eatVeggie(vegatable);
-        }
-        System.out.println("veggie "+vegatable.getInitialWeight());
-        System.out.println("Caterpillar  "+Duck.getWeight());
+//        Duck caterpillar = new Duck();
+//        System.out.println("Caterpillar  "+Duck.getWeight());
+//        Vegatable vegatable = new Vegatable();
+//        System.out.println("veggie "+vegatable.getInitialWeight());
+//        for (int i = 0; i < 10; i++) {
+//            caterpillar.eatVeggie(vegatable);
+//        }
+//        System.out.println("veggie "+vegatable.getInitialWeight());
+//        System.out.println("Caterpillar  "+Duck.getWeight());
+
+        duck.setGender(true);
+        Duck duck1 = new Duck();
+        duck1.setGender(false);
+        System.out.println(duck.multiply(duck1));
+
+    }
+
+
+    @Override
+    public Animal<? extends Animal> multiply(Animal animal) {
+        return null;
     }
 }

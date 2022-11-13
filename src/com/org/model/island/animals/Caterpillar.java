@@ -1,7 +1,9 @@
 package com.org.model.island.animals;
 
+import com.org.model.enums.AnimalType;
 import com.org.model.interfaces.Eatable;
 import com.org.model.interfaces.Herbivores;
+import com.org.model.island.AnimalFactory;
 import com.org.model.island.vegetable.Vegatable;
 
 
@@ -101,6 +103,19 @@ public class Caterpillar extends Animal implements Herbivores {
         }
         return this.getWeight();
     }
+//    @Override
+//      public Animal<? extends Animal> multiply(Animal  animal) {
+//        if (animal instanceof Caterpillar) {
+//            Caterpillar caterpillar = (Caterpillar) animal;
+//            if (!caterpillar.getGender().equals(this.getGender())) {
+//                Caterpillar caterpillarNew = (Caterpillar) AnimalFactory.createAnimal(AnimalType.CATERPILLAR);
+//                System.out.println("new  " + caterpillarNew);
+//                return caterpillarNew;
+//            }
+//        }
+//        return null;
+//    }
+
 
     public static void main(String[] args) {
         Caterpillar caterpillar = new Caterpillar();
@@ -112,5 +127,18 @@ public class Caterpillar extends Animal implements Herbivores {
         }
         System.out.println("veggie "+vegatable.getInitialWeight());
         System.out.println("Caterpillar  "+Caterpillar.getWeight());
+
+        Caterpillar caterpillar1 = new Caterpillar();
+        Caterpillar caterpillar2 = new Caterpillar();
+        caterpillar1.setGender(Boolean.TRUE);
+        caterpillar2.setGender(Boolean.FALSE);
+
+        System.out.println(caterpillar1.multiply(caterpillar2));
+    }
+
+
+    @Override
+    public Animal<? extends Animal> multiply(Animal animal) {
+        return null;
     }
 }

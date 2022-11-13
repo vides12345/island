@@ -9,7 +9,7 @@ import com.org.model.island.animals.Animal;
 import java.util.HashSet;
 import java.util.List;
 
-public class Create {
+public class AnimalGenerator {
     private List<HashSet<? extends Animal>> list = Location.getList();
 
     /*
