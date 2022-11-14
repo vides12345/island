@@ -8,16 +8,16 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Location {
-    private static   List<HashSet<? extends Animal>> list= new ArrayList<>() ;
+    private static List<HashSet<? extends Animal>> list= new ArrayList<>() ;
     private Vegatable vegatable;
 
 
 
-    public static List<HashSet<? extends Animal>> getList() {
+    public static   List<HashSet<? extends Animal>> getList() {
         return list;
     }
 
-    public static void setList(List<HashSet<? extends Animal>> list) {
+    public static   void setList(List<HashSet<? extends Animal>> list) {
         Location.list = list;
     }
 

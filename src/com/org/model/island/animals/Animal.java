@@ -32,20 +32,9 @@ public abstract class Animal<T>{
         this.gender = gender;
     }
 
-    //    private static int quantityOfAnimals = 0;
-//
-//
-//
-//    protected Animals() {
-//        quantityOfAnimals++;
-//    }
-//
-//
-//
-//
-    public abstract  Animal<? extends Animal> multiply(Animal animal);
-//
-//    abstract void moveInToDirecction();
+    public abstract Animal<? extends Animal> multiply(Animal animal);
+//    public abstract Animal<? extends Animal> hunt();
+//    public abstract void moveInToDirecction();
 
 
 }

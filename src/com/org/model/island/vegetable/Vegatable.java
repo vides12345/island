@@ -11,5 +11,5 @@ public  class Vegatable  {
         this.initialWeight = initialWeight;
     }
 
-      void grow(){};
+
 }

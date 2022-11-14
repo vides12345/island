@@ -14,19 +14,12 @@ public class Controller {
 
 
     private void createIsland() {
-//        generateLocation();
+        new AnimalGenerator().generateIslandPopulation();
     }
 //    public void generateLocation() {
 //        //crear matriz para generar animales y plantas
 //        //utilizar random para crear cantidad y genero de animales de cada tipo
 //        //en cada celda generar animales
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < columns; j++) {
-//                new Random();
-//            }
-//        }
-//
-//
 //    }
     private void createAnimals() {
 
