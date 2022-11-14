@@ -26,7 +26,7 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         map.put(Caterpillar.class, 90);
     }
 
-//    private String name;
+    //    private String name;
 //    private Boolean gender; //TRue if Male , False if Femene
     private static int quantityOfDuck;
     private static int quantityOfMale;
@@ -142,18 +142,18 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         return null;
     }
 
-//    @Override
-//      public Animal<? extends Animal> multiply(Animal  animal) {
-//        if (animal instanceof Duck) {
-//            Duck duck = (Duck) animal;
-//            if (!duck.getGender().equals(this.getGender())) {
-//                Duck duckNew = (Duck) AnimalFactory.createAnimal(AnimalType.DUCK);
-//                System.out.println("new  " + duckNew);
-//                return duckNew;
-//            }
-//        }
-//        return null;
-//    }
+    @Override
+    public Animal<? extends Animal> multiply(Animal animal) {
+        if (animal instanceof Duck) {
+            Duck duck = (Duck) animal;
+            if (!duck.getGender().equals(this.getGender())) {
+                Duck duckNew = (Duck) AnimalFactory.createAnimal(AnimalType.DUCK);
+                System.out.println("new  " + duckNew);
+                return duckNew;
+            }
+        }
+        return null;
+    }
 
 
     public static void main(String[] args) {
@@ -179,9 +179,4 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
 
     }
 
-
-    @Override
-    public Animal<? extends Animal> multiply(Animal animal) {
-        return null;
-    }
 }

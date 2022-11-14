@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Caterpillar extends Animal implements Herbivores {
     private static double weight = 0.1;
-//    private static int maxPopulation=1000;
+    //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;
     private static double foodRequired = 0.01;
 
@@ -90,9 +90,7 @@ public class Caterpillar extends Animal implements Herbivores {
 
     @Override
     public String toString() {
-        return name + '\'' +
-                ", gender=" + gender +
-                '}';
+        return name + '\'' + ", gender=" + gender + '}';
     }
 
     @Override
@@ -103,30 +101,31 @@ public class Caterpillar extends Animal implements Herbivores {
         }
         return this.getWeight();
     }
-//    @Override
-//      public Animal<? extends Animal> multiply(Animal  animal) {
-//        if (animal instanceof Caterpillar) {
-//            Caterpillar caterpillar = (Caterpillar) animal;
-//            if (!caterpillar.getGender().equals(this.getGender())) {
-//                Caterpillar caterpillarNew = (Caterpillar) AnimalFactory.createAnimal(AnimalType.CATERPILLAR);
-//                System.out.println("new  " + caterpillarNew);
-//                return caterpillarNew;
-//            }
-//        }
-//        return null;
-//    }
+
+    @Override
+    public Animal<? extends Animal> multiply(Animal animal) {
+        if (animal instanceof Caterpillar) {
+            Caterpillar caterpillar = (Caterpillar) animal;
+            if (!caterpillar.getGender().equals(this.getGender())) {
+                Caterpillar caterpillarNew = (Caterpillar) AnimalFactory.createAnimal(AnimalType.CATERPILLAR);
+                System.out.println("new  " + caterpillarNew);
+                return caterpillarNew;
+            }
+        }
+        return null;
+    }
 
 
     public static void main(String[] args) {
         Caterpillar caterpillar = new Caterpillar();
-        System.out.println("Caterpillar  "+Caterpillar.getWeight());
+        System.out.println("Caterpillar  " + Caterpillar.getWeight());
         Vegatable vegatable = new Vegatable();
-        System.out.println("veggie "+vegatable.getInitialWeight());
+        System.out.println("veggie " + vegatable.getInitialWeight());
         for (int i = 0; i < 10; i++) {
             caterpillar.eatVeggie(vegatable);
         }
-        System.out.println("veggie "+vegatable.getInitialWeight());
-        System.out.println("Caterpillar  "+Caterpillar.getWeight());
+        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("Caterpillar  " + Caterpillar.getWeight());
 
         Caterpillar caterpillar1 = new Caterpillar();
         Caterpillar caterpillar2 = new Caterpillar();
@@ -136,9 +135,4 @@ public class Caterpillar extends Animal implements Herbivores {
         System.out.println(caterpillar1.multiply(caterpillar2));
     }
 
-
-    @Override
-    public Animal<? extends Animal> multiply(Animal animal) {
-        return null;
-    }
 }
