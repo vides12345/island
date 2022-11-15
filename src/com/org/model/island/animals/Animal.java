@@ -32,8 +32,15 @@ public abstract class Animal<T>{
         this.gender = gender;
     }
 
+    @Override
+    public String toString() {
+        return " name='" + name + '\'' +
+                ", gender=" + gender +
+                '}';
+    }
+
     public abstract Animal<? extends Animal> multiply(Animal animal);
-//    public abstract Animal<? extends Animal> hunt();
+    public abstract Class<? extends Animal> eat(int posibility);
 //    public abstract void moveInToDirecction();
 
 

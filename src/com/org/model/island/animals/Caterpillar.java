@@ -115,6 +115,11 @@ public class Caterpillar extends Animal implements Herbivores {
         return null;
     }
 
+    @Override
+    public Class<? extends Animal> eat(int posibility) {
+        return null;
+    }
+
 
     public static void main(String[] args) {
         Caterpillar caterpillar = new Caterpillar();
