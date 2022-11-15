@@ -16,37 +16,17 @@ public class Caterpillar extends Animal implements Herbivores {
 //    private static int speedByCell = 0;
     private static double foodRequired = 0.01;
 
-
-    private String name;
-    private Boolean gender; //TRue if Male , False if Femene
     private static int quantityOfCaterpillar;
     private static int quantityOfMale;
     private static int quantityOfFemale;
-
 
     public Caterpillar() {
     }
 
     public Caterpillar(String name, Boolean gender) {
-        this.name = name;
-        this.gender = gender;
+        super(name, gender);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Boolean getGender() {
-        return gender;
-    }
-
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
 
     public static int getQuantityOfCaterpillar() {
         return quantityOfCaterpillar;
@@ -90,7 +70,7 @@ public class Caterpillar extends Animal implements Herbivores {
 
     @Override
     public String toString() {
-        return name + '\'' + ", gender=" + gender + '}';
+        return "Caterpilla" + super.toString();
     }
 
     @Override
@@ -108,7 +88,6 @@ public class Caterpillar extends Animal implements Herbivores {
             Caterpillar caterpillar = (Caterpillar) animal;
             if (!caterpillar.getGender().equals(this.getGender())) {
                 Caterpillar caterpillarNew = (Caterpillar) AnimalFactory.createAnimal(AnimalType.CATERPILLAR);
-                System.out.println("new  " + caterpillarNew);
                 return caterpillarNew;
             }
         }
