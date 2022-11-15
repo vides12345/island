@@ -132,18 +132,18 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
             }
         }
         //choice one from set
+        Class<? extends Animal> aClass;// = keys.get(index);
         if (keys.size() > 1) {
             //return animal
             int index = Service.randomTypeOfAnimals(keys.size());
             System.out.println("index           " + index);
             System.out.println(keys);
-            return keys.get(index);
+            aClass = keys.get(index);
         }
         else {
-            return keys.get(0);
-
+            aClass=keys.get(0);
         }
-//        return null;
+        return aClass;
 
     }
 
