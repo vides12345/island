@@ -1,19 +1,17 @@
 package com.org.model.island;
 
+import java.util.List;
+
 public class Island {
-    private static final int rows = 10;
-    private static final int columns = 10;
-    Location[][] locations;
+    private final int rows;// = 10;
+    private final int columns;// = 10;
+    List<List<Location>> startLocation;
+    List<List<Location>> nextLocation;
 
-    public Island( ) {
-        this.locations = new Location[rows][columns];
-    }
-
-    public Location[][] getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    public Island(int rows, int columns) {
+        this.rows = rows;
+        this.columns = columns;
+        this.startLocation = startLocation;
+        this.nextLocation = nextLocation;
     }
 }

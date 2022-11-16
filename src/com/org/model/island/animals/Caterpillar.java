@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Caterpillar extends Animal implements Herbivores {
-    private static double weight = 0.1;
+    private static Float weight = 0.1F;
     //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;
-    private static double foodRequired = 0.01;
+    private static float foodRequired = 0.01F;
 
     private static int quantityOfCaterpillar;
     private static int quantityOfMale;
@@ -36,36 +36,16 @@ public class Caterpillar extends Animal implements Herbivores {
         Caterpillar.quantityOfCaterpillar = quantityOfCaterpillar;
     }
 
-    public static double getWeight() {
+    public static Float getWeight() {
         return weight;
     }
 
-    public static void setWeight(double weight) {
+    public static void setWeight(float weight) {
         Caterpillar.weight = weight;
     }
 
-    public static double getFoodRequired() {
+    public static float getFoodRequired() {
         return foodRequired;
-    }
-
-    public static void setFoodRequired(double foodRequired) {
-        Caterpillar.foodRequired = foodRequired;
-    }
-
-    public static int getQuantityOfMale() {
-        return quantityOfMale;
-    }
-
-    public static void setQuantityOfMale(int quantityOfMale) {
-        Caterpillar.quantityOfMale = quantityOfMale;
-    }
-
-    public static int getQuantityOfFemale() {
-        return quantityOfFemale;
-    }
-
-    public static void setQuantityOfFemale(int quantityOfFemale) {
-        Caterpillar.quantityOfFemale = quantityOfFemale;
     }
 
     @Override
@@ -74,7 +54,7 @@ public class Caterpillar extends Animal implements Herbivores {
     }
 
     @Override
-    public Double eatVeggie(Vegatable vegatable) {
+    public Float eatVeggie(Vegatable vegatable) {
         if (vegatable.getInitialWeight() >= this.getWeight()) {
             setWeight(getWeight() + getFoodRequired());
             vegatable.setInitialWeight(vegatable.getInitialWeight() - getWeight());

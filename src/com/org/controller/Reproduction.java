@@ -29,13 +29,9 @@ public class Reproduction {
         }
         list = copyList;
     }
-
-
     public static void main(String[] args) {
         AnimalGenerator animalGenerator = new AnimalGenerator();
         animalGenerator.generateIslandPopulation();
         localMultiplying();
     }
-
-
 }

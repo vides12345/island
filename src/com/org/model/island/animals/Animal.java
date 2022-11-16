@@ -3,8 +3,8 @@ package com.org.model.island.animals;
 //покушать, размножиться, выбрать направление передвижения
 
 public abstract class Animal<T>{
-    private String name;
-    private Boolean gender; //TRue if Male , False if Femene
+    protected String name;
+    protected Boolean gender; //TRue if Male , False if Femene
 
     public Animal() {
     }

@@ -1,7 +1,13 @@
 package com.org.controller;
 
-//Public static final Map<Class<Animal>, Map<Class<Animal>, Integer> процент сьесть кого то
-//1) Key- wolf, vale - Map({Rabbit, 60}, {Snake, 30} …
+import com.org.model.island.Location;
+import com.org.model.island.animals.Animal;
+
+import java.util.HashSet;
+import java.util.List;
+
+
 public class Eat {
+    private static List<HashSet<? extends Animal>> list = Location.getList();
 
 }

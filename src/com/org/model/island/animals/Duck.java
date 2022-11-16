@@ -14,31 +14,20 @@ import java.util.*;
 public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
 
     private static Map<Class<? extends Animal>, Integer> map = new HashMap<>();
-    private static double weight = 1;
+    private static float duckWeight = 1;
 
     //    private static int maxPopulation=200;
     //    private static int speedByCell=4;
-    private static double foodRequired = 0.15;
+    private static float duckFoodRequired =1;// 0.15;
 
     static {
 //        map.put(Deer.class, 90);
 //        map.put(Wolf.class, 90);
         map.put(Caterpillar.class, 90);
     }
-
-    //    private String name;
-//    private Boolean gender; //TRue if Male , False if Femene
     private static int quantityOfDuck;
     private static int quantityOfMale;
     private static int quantityOfFemale;
-
-//    public Duck(String name, Boolean gender) {
-//        this.name = name;
-//        this.gender = gender;
-//    }
-//
-//    public Duck() {
-//    }
 
     public Duck() {
     }
@@ -47,21 +36,6 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         super(name, gender);
     }
 
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public Boolean getGender() {
-//        return gender;
-//    }
-//
-//    public void setGender(Boolean gender) {
-//        this.gender = gender;
-//    }
 
     public static int getQuantityOfDuck() {
         return quantityOfDuck;
@@ -87,40 +61,34 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
         Duck.quantityOfFemale = quantityOfFemale;
     }
 
-    public static double getWeight() {
-        return weight;
+    public static float getDuckWeight() {
+        return duckWeight;
     }
 
-    public static void setWeight(double weight) {
-        Duck.weight = weight;
+    public static void setDuckWeight(float duckWeight) {
+        Duck.duckWeight = duckWeight;
     }
 
-    public static double getFoodRequired() {
-        return foodRequired;
+    public static float getDuckFoodRequired() {
+        return duckFoodRequired;
     }
 
-    public static void setFoodRequired(double foodRequired) {
-        Duck.foodRequired = foodRequired;
+    public static void setDuckFoodRequired(float duckFoodRequired) {
+        Duck.duckFoodRequired = duckFoodRequired;
     }
-
-//    @Override
-//    public String toString() {
-//        return name +
-//                ", gender=" + gender +
-//                '}';
-//    }
 
     @Override
-    public Double eatVeggie(Vegatable vegatable) {
-        if (vegatable.getInitialWeight() >= getWeight()) {
-            setWeight(getWeight() + getFoodRequired());
-            vegatable.setInitialWeight(vegatable.getInitialWeight() - getFoodRequired());
+    public Float eatVeggie(Vegatable vegatable) {
+        if (vegatable.getInitialWeight() >= getDuckWeight()) {
+            setDuckWeight(getDuckWeight() + getDuckFoodRequired());
+            vegatable.setInitialWeight(vegatable.getInitialWeight() - getDuckFoodRequired());
         }
-        return getWeight();
+        return getDuckWeight();
     }
 
     /*
-    Carnivores eat all kind of Eatable animals
+    Carnivores eat all kind of Eatable animals, if there are more one
+    eatable animal, randomly choice one
      */
     @Override
     public Class<? extends Animal> eat(int posibility) {
@@ -132,16 +100,13 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
             }
         }
         //choice one from set
-        Class<? extends Animal> aClass;// = keys.get(index);
+        Class<? extends Animal> aClass=null;// = keys.get(index);
         if (keys.size() > 1) {
-            //return animal
+            //return animal fro static HashMap
             int index = Service.randomTypeOfAnimals(keys.size());
-            System.out.println("index           " + index);
-            System.out.println(keys);
             aClass = keys.get(index);
-        }
-        else {
-            aClass=keys.get(0);
+        } else {
+            aClass = keys.get(0);
         }
         return aClass;
 
@@ -166,24 +131,20 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
 
     public static void main(String[] args) {
         Duck duck = new Duck();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             Class<? extends Animal> aClass = duck.eat(90);
-            System.out.println(aClass);
+            System.out.println(aClass.getSimpleName());
         }
-        Duck caterpillar = new Duck();
-        System.out.println("Caterpillar  "+Duck.getWeight());
+        Duck duckNew = new Duck();
+        System.out.println("Duck  " + Duck.getDuckWeight());
         Vegatable vegatable = new Vegatable();
-        System.out.println("veggie "+vegatable.getInitialWeight());
-        for (int i = 0; i < 10; i++) {
-            caterpillar.eatVeggie(vegatable);
+        System.out.println("veggie " + vegatable.getInitialWeight());
+        for (int i = 0; i < 2; i++) {
+            duckNew.eatVeggie(vegatable);
         }
-        System.out.println("veggie "+vegatable.getInitialWeight());
-        System.out.println("Caterpillar  "+Duck.getWeight());
+        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("Duck  " + Duck.getDuckWeight());
 
-        duck.setGender(true);
-        Duck duck1 = new Duck();
-        duck1.setGender(false);
-        System.out.println(duck.multiply(duck1));
 
     }
 
