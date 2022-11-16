@@ -3,6 +3,6 @@ package com.org.model.interfaces;
 
 import com.org.model.island.vegetable.Vegatable;
 
-public interface Herbivores {
+public interface herbivorous {
     Float eatVeggie(Vegatable vegatable);
 }

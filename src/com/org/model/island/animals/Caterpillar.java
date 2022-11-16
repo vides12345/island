@@ -1,16 +1,11 @@
 package com.org.model.island.animals;
 
 import com.org.model.enums.AnimalType;
-import com.org.model.interfaces.Eatable;
-import com.org.model.interfaces.Herbivores;
+import com.org.model.interfaces.herbivorous;
 import com.org.model.island.AnimalFactory;
 import com.org.model.island.vegetable.Vegatable;
 
-
-import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
-
-public class Caterpillar extends Animal implements Herbivores {
+public class Caterpillar extends Animal implements herbivorous {
     private static Float weight = 0.1F;
     //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;
@@ -75,7 +70,7 @@ public class Caterpillar extends Animal implements Herbivores {
     }
 
     @Override
-    public Class<? extends Animal> eat(int posibility) {
+    public Class<? extends Animal> eat(int probability) {
         return null;
     }
 

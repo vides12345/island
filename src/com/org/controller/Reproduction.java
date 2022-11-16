@@ -3,13 +3,17 @@ package com.org.controller;
 import com.org.Service;
 import com.org.model.island.Location;
 import com.org.model.island.animals.Animal;
+
 import java.util.*;
 
 public class Reproduction {
     private static List<HashSet<? extends Animal>> list = Location.getList();
+/*for each Location, we take a group of similar animals from HashSet
+and find pair of F and M. if we found we call Factory to create new instance
+and add to HashSet
+ */
 
     public static void localMultiplying() {
-        System.out.println(list.size());
         List<HashSet<? extends Animal>> copyList = new ArrayList<>();
         for (HashSet<? extends Animal> set : list) {
             ArrayList<Animal> animals = new ArrayList<>(set);
@@ -17,18 +21,18 @@ public class Reproduction {
             for (int i = 0; i < animals.size(); i++) {
                 Animal<? extends Animal> animal = animals.get(i).multiply(animals.get(Service.randomTypeOfAnimals(animals.size() - i)));
                 if (animal != null) {
-                    System.out.println("_____________"+temporal.add(animal));
+                    temporal.add(animal);
                 }
             }
-            System.out.println("Animals initial   "+animals);
             HashSet hashSet = new HashSet(animals);
-            System.out.println("Born   " + temporal);
-            System.out.println(temporal.size());
             hashSet.addAll(temporal);
+            System.out.println("Size of new HashSet  "+hashSet.size());
             copyList.add(hashSet);
+            System.out.println(copyList);
         }
         list = copyList;
     }
+
     public static void main(String[] args) {
         AnimalGenerator animalGenerator = new AnimalGenerator();
         animalGenerator.generateIslandPopulation();

@@ -28,7 +28,7 @@ public class AnimalGenerator {
             }
             list.add((HashSet<? extends Animal>) animals);
         }
-        System.out.println("Size " + list.size());
+        System.out.println("Type of Animals " + list.size());
         Location.setList(list);
         System.out.println(list);
     }

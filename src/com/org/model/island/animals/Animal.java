@@ -38,7 +38,7 @@ public abstract class Animal<T>{
     }
 //Realized completly for Caterpillar and Duck
     public abstract Animal<? extends Animal> multiply(Animal animal);
-    public abstract Class<? extends Animal> eat(int posibility);
+    public abstract Class<? extends Animal> eat(int probability);
 //    public abstract void moveInToDirecction();
 
 

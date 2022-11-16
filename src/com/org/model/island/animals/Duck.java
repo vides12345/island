@@ -4,14 +4,13 @@ import com.org.Service;
 import com.org.model.enums.AnimalType;
 import com.org.model.interfaces.Carnivore;
 import com.org.model.interfaces.Eatable;
-import com.org.model.interfaces.Herbivores;
+import com.org.model.interfaces.herbivorous;
 import com.org.model.island.AnimalFactory;
 import com.org.model.island.vegetable.Vegatable;
 
-import java.awt.image.ImageProducer;
 import java.util.*;
 
-public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
+public class Duck extends Animal implements Carnivore, herbivorous, Eatable {
 
     private static Map<Class<? extends Animal>, Integer> map = new HashMap<>();
     private static float duckWeight = 1;
@@ -91,11 +90,11 @@ public class Duck extends Animal implements Carnivore, Herbivores, Eatable {
     eatable animal, randomly choice one
      */
     @Override
-    public Class<? extends Animal> eat(int posibility) {
+    public Class<? extends Animal> eat(int probability) {
         Set<Map.Entry<Class<? extends Animal>, Integer>> entries = map.entrySet();
         List<Class<? extends Animal>> keys = new ArrayList<>();
         for (Map.Entry<Class<? extends Animal>, Integer> entry : entries) {
-            if (Objects.equals(posibility, entry.getValue())) {
+            if (Objects.equals(probability, entry.getValue())) {
                 keys.add(entry.getKey());
             }
         }
