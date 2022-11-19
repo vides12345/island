@@ -18,16 +18,18 @@ public class Eat {
     public void locationEat() {
         //we check if elements of HashSet are Carnivores or Hervibour
         //if carnivore we call animal.eat()
-        //remove element from list
+        //remove animal element if was hunted or  eated(Eatable marker ) from animal list Location.
         //if herbivour we call animal.herbivour.eat
-        // minus total kg of vrgrtablr that the animal eat
+        // minus total kg of vegetable that the animal eat
         // we fix total weight vegetable and total eats
         for (HashSet<? extends Animal> set : list) {
             for (Animal animal : set) {
                 if (animal instanceof Carnivore) {
                     animal.eat(getProbability());
+                    //remove from list
                 } else if (animal instanceof Herbivorous) {
                     ((Herbivorous) animal).eatVeggie(vegatable);
+                    //minus kg vegetable
                 }
             }
         }
