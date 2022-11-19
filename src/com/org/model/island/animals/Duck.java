@@ -78,9 +78,9 @@ public class Duck extends Animal implements Carnivore, Herbivorous, Eatable {
 
     @Override
     public Float eatVeggie(Vegatable vegatable) {
-        if (vegatable.getInitialWeight() >= getDuckWeight()) {
+        if (vegatable.getWeight() >= getDuckWeight()) {
             setDuckWeight(getDuckWeight() + getDuckFoodRequired());
-            vegatable.setInitialWeight(vegatable.getInitialWeight() - getDuckFoodRequired());
+            vegatable.setWeight(vegatable.getWeight() - getDuckFoodRequired());
         }
         return getDuckWeight();
     }
@@ -96,18 +96,22 @@ public class Duck extends Animal implements Carnivore, Herbivorous, Eatable {
         for (Map.Entry<Class<? extends Animal>, Integer> entry : entries) {
             if (Objects.equals(posibility, entry.getValue())) {
                 keys.add(entry.getKey());
+                //remove from list first animal Class
             }
         }
         //choice one from set
-        Class<? extends Animal> aClass=null;// = keys.get(index);
-        if (keys.size() > 1) {
+        if (keys.size() >= 1) {
             //return animal fro static HashMap
             int index = Service.randomTypeOfAnimals(keys.size());
-            aClass = keys.get(index);
-        } else {
-            aClass = keys.get(0);
+            System.out.println(keys.get(index) +"*************   *******");
+            return keys.get(index);
+
         }
-        return aClass;
+//        else {
+//            System.out.println(keys.get(0) +"************************");
+//            aClass = keys.get(0);
+//        }
+        return null;
 
     }
 
@@ -137,11 +141,11 @@ public class Duck extends Animal implements Carnivore, Herbivorous, Eatable {
         Duck duckNew = new Duck();
         System.out.println("Duck  " + Duck.getDuckWeight());
         Vegatable vegatable = new Vegatable();
-        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("veggie " + vegatable.getWeight());
         for (int i = 0; i < 2; i++) {
             duckNew.eatVeggie(vegatable);
         }
-        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("veggie " + vegatable.getWeight());
         System.out.println("Duck  " + Duck.getDuckWeight());
 
 

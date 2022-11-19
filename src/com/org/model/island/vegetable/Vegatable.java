@@ -1,15 +1,17 @@
 package com.org.model.island.vegetable;
 
 public  class Vegatable  {
-    private double initialWeight=200;
+    private float weight;
 
-    public double getInitialWeight() {
-        return initialWeight;
+    public Vegatable() {
+        weight = 200F;
     }
 
-    public void setInitialWeight(double initialWeight) {
-        this.initialWeight = initialWeight;
+    public float getWeight() {
+        return weight;
     }
 
-
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
 }

@@ -50,9 +50,9 @@ public class Caterpillar extends Animal implements Herbivorous {
 
     @Override
     public Float eatVeggie(Vegatable vegatable) {
-        if (vegatable.getInitialWeight() >= this.getWeight()) {
+        if (vegatable.getWeight() >= this.getWeight()) {
             setWeight(getWeight() + getFoodRequired());
-            vegatable.setInitialWeight(vegatable.getInitialWeight() - getWeight());
+            vegatable.setWeight(vegatable.getWeight() - getWeight());
         }
         return this.getWeight();
     }
@@ -79,11 +79,11 @@ public class Caterpillar extends Animal implements Herbivorous {
         Caterpillar caterpillar = new Caterpillar();
         System.out.println("Caterpillar  " + Caterpillar.getWeight());
         Vegatable vegatable = new Vegatable();
-        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("veggie " + vegatable.getWeight());
         for (int i = 0; i < 10; i++) {
             caterpillar.eatVeggie(vegatable);
         }
-        System.out.println("veggie " + vegatable.getInitialWeight());
+        System.out.println("veggie " + vegatable.getWeight());
         System.out.println("Caterpillar  " + Caterpillar.getWeight());
 
         Caterpillar caterpillar1 = new Caterpillar();
