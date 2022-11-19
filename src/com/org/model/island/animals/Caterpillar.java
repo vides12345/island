@@ -1,11 +1,11 @@
 package com.org.model.island.animals;
 
 import com.org.model.enums.AnimalType;
-import com.org.model.interfaces.herbivorous;
+import com.org.model.interfaces.Herbivorous;
 import com.org.model.island.AnimalFactory;
 import com.org.model.island.vegetable.Vegatable;
 
-public class Caterpillar extends Animal implements herbivorous {
+public class Caterpillar extends Animal implements Herbivorous {
     private static Float weight = 0.1F;
     //    private static int maxPopulation=1000;
 //    private static int speedByCell = 0;
@@ -70,7 +70,7 @@ public class Caterpillar extends Animal implements herbivorous {
     }
 
     @Override
-    public Class<? extends Animal> eat(int probability) {
+    public Class<? extends Animal> eat(int posibility) {
         return null;
     }
 
