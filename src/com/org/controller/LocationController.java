@@ -8,12 +8,22 @@ import java.util.List;
 
 public class LocationController {
     private List<HashSet<? extends Animal>> list = Location.getList();
+    Location location;
 
-    public synchronized void Add() {
-
+    public Location getLocation() {
+        return location;
     }
 
-    public synchronized void remove() {
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
+    public synchronized void AddAnimal(Animal animal) {
+//        Location.getList().add(anima);
+    }
+
+    public synchronized void removeAnimal(Animal animal) {
+
+        Location.getList().remove(animal);
     }
 }

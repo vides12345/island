@@ -16,7 +16,7 @@ public class AnimalGenerator {
     Generating initial population of Animals, using Fabric Pattern
     on Island, giving the name and Gender of Animal on a  List of HashSet<? extends Animals>.
      */
-    public void generateIslandPopulation() {
+    public void generateLocationPopulation() {
         AnimalType[] values = AnimalType.values();
         for (AnimalType value : values) {
             HashSet<? super Animal> animals = new HashSet<>();

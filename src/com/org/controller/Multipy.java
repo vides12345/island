@@ -35,7 +35,7 @@ and add to respectively HashSet
 
     public static void main(String[] args) {
         AnimalGenerator animalGenerator = new AnimalGenerator();
-        animalGenerator.generateIslandPopulation();
+        animalGenerator.generateLocationPopulation();
         localMultiplying();
     }
 }

@@ -13,8 +13,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Eat {
     private static List<HashSet<? extends Animal>> list = Location.getList();
     Vegatable vegatable = new Vegatable();
-
-
     public void locationEat() {
         //we check if elements of HashSet are Carnivores or Hervibour
         //if carnivore we call animal.eat()
@@ -96,7 +94,7 @@ public class Eat {
     public static void main(String[] args) {
         Eat eat = new Eat();
         AnimalGenerator generator = new AnimalGenerator();
-        generator.generateIslandPopulation();
+        generator.generateLocationPopulation();
 
         List<HashSet<? extends Animal>> list1 = Eat.list;
         for (HashSet<? extends Animal> hashSet : list1) {

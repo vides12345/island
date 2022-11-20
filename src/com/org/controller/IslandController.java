@@ -1,7 +1,7 @@
 package com.org.controller;
 
 public class IslandController {
-
+    LocationController locationController;
 
     public void run() {
         createIsland();
@@ -14,7 +14,7 @@ public class IslandController {
 
 
     private void createIsland() {
-        new AnimalGenerator().generateIslandPopulation();
+        new AnimalGenerator().generateLocationPopulation();
     }
 //    public void generateLocation() {
 //        //crear matriz para generar animales y plantas
