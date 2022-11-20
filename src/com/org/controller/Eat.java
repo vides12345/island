@@ -13,37 +13,39 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Eat {
     private static List<HashSet<? extends Animal>> list = Location.getList();
     Vegatable vegatable = new Vegatable();
+
+    /*
+        we check if elements of HashSet are Carnivores or Hervibour
+        if carnivore we call animal.eat()
+        remove animal element if was hunted or  eated(Eatable marker ) from animal list Location on hashset.
+        if herbivour we call animal.herbivour.eat
+         minus total kg of vegetable that the animal eat
+         we fix total weight vegetable and total eats
+     */
     public void locationEat() {
-        //we check if elements of HashSet are Carnivores or Hervibour
-        //if carnivore we call animal.eat()
-        //remove animal element if was hunted or  eated(Eatable marker ) from animal list Location on hashset.
-        //if herbivour we call animal.herbivour.eat
-        // minus total kg of vegetable that the animal eat
-        // we fix total weight vegetable and total eats
+
         for (HashSet<? extends Animal> set : list) {
             HashSet<? extends Animal> setToUpdate = set;
             System.out.println("update " + setToUpdate);
             for (Animal animal : set) {
-                if (animal instanceof Carnivore) {
+                if (isCarnivore(animal)) {
                     Class eat = animal.eat(getProbability());
                     System.out.println(eat + "%%%%%%%%%%%%%%%%%%%");
                     getAndRemove(eat);
-//                    //find and remove from list,  with HashSet of Class firstAny animal of this type
-                } else if (animal instanceof Herbivorous) {
+    //find and remove from list,  with HashSet of Class firstAny animal of this type
+                } else if (isHerbivour(animal)) {
                     System.out.println(animal.getClass().getSimpleName() + "  Eat");
                     ((Herbivorous) animal).eatVeggie(vegatable);
                     System.out.println("Weight    " + vegatable.getWeight());
-
                     //minus kg vegetable
                 }
-
             }
         }
     }
 
     private void getAndRemove(Class animalClass) {
         for (HashSet<? extends Animal> animalSet : list) {
-            System.out.println(animalSet.size()+"       Do    "+animalSet);
+            System.out.println(animalSet.size() + "       Do    " + animalSet);
             Iterator<? extends Animal> iterator = animalSet.iterator();
             while (iterator.hasNext()) {
                 Animal next = iterator.next();
@@ -52,7 +54,7 @@ public class Eat {
                     break;
                 }
             }
-            System.out.println(animalSet.size() +"         Pislya    "+animalSet);
+            System.out.println(animalSet.size() + "         Pislya    " + animalSet);
         }
     }
 
@@ -83,11 +85,11 @@ public class Eat {
         return probability;
     }
 
-    private boolean isHerbivour(HashSet<? extends Animal> animal) {
+    private boolean isHerbivour(Animal<? extends Animal> animal) {
         return animal instanceof Herbivorous;
     }
 
-    private boolean isCarivore(HashSet<? extends Animal> animal) {
+    private boolean isCarnivore(Animal<? extends Animal> animal) {
         return animal instanceof Carnivore;
     }
 
@@ -109,6 +111,4 @@ public class Eat {
         }
         eat.locationEat();
     }
-
-
 }

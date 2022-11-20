@@ -8,9 +8,8 @@ import com.org.model.island.vegetable.Vegatable;
 public class Caterpillar extends Animal implements Herbivorous {
     private static Float weight = 0.1F;
     //    private static int maxPopulation=1000;
-//    private static int speedByCell = 0;
+    //    private static int speedByCell = 0;
     private static float foodRequired = 0.01F;
-
     private static int quantityOfCaterpillar;
     private static int quantityOfMale;
     private static int quantityOfFemale;
@@ -21,7 +20,6 @@ public class Caterpillar extends Animal implements Herbivorous {
     public Caterpillar(String name, Boolean gender) {
         super(name, gender);
     }
-
 
     public static int getQuantityOfCaterpillar() {
         return quantityOfCaterpillar;
@@ -93,5 +91,4 @@ public class Caterpillar extends Animal implements Herbivorous {
 
         System.out.println(caterpillar1.multiply(caterpillar2));
     }
-
 }

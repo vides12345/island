@@ -11,19 +11,18 @@ import com.org.model.island.vegetable.Vegatable;
 import java.util.*;
 
 public class Duck extends Animal implements Carnivore, Herbivorous, Eatable {
-
     private static Map<Class<? extends Animal>, Integer> map = new HashMap<>();
     private static float duckWeight = 1;
-
     //    private static int maxPopulation=200;
     //    private static int speedByCell=4;
-    private static float duckFoodRequired =1;// 0.15;
+    private static float duckFoodRequired = 1;// 0.15;
 
     static {
 //        map.put(Deer.class, 90);
 //        map.put(Wolf.class, 90);
         map.put(Caterpillar.class, 90);
     }
+
     private static int quantityOfDuck;
     private static int quantityOfMale;
     private static int quantityOfFemale;
@@ -103,14 +102,10 @@ public class Duck extends Animal implements Carnivore, Herbivorous, Eatable {
         if (keys.size() >= 1) {
             //return animal fro static HashMap
             int index = Service.randomTypeOfAnimals(keys.size());
-            System.out.println(keys.get(index) +"*************   *******");
+            System.out.println(keys.get(index) + "*************   *******");
             return keys.get(index);
 
         }
-//        else {
-//            System.out.println(keys.get(0) +"************************");
-//            aClass = keys.get(0);
-//        }
         return null;
 
     }
