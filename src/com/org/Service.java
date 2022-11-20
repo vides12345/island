@@ -19,8 +19,6 @@ public class Service {
         return random.nextBoolean();
     }
 
-
-
     public static void main(String[] args) {
         System.out.println(getNameFromEnumType(AnimalType.CATERPILLAR));
         for (int i = 0; i < 20; i++) {

@@ -13,7 +13,7 @@ public class LocationController {
 
     }
 
-    public synchronized void get() {
+    public synchronized void remove() {
 
     }
 }

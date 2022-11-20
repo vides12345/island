@@ -1,6 +1,6 @@
 package com.org.controller;
 
-public class Controller {
+public class IslandController {
 
 
     public void run() {

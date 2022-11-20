@@ -6,11 +6,11 @@ import com.org.model.island.animals.Animal;
 
 import java.util.*;
 
-public class Reproduction {
+public class Multipy {
     private static List<HashSet<? extends Animal>> list = Location.getList();
-/*for each Location, we take a group of similar animals from HashSet
+/*for each Location,  take a group of similar animals from HashSet
 and find pair of F and M. if we found we call Factory to create new instance
-and add to HashSet
+and add to respectively HashSet
  */
 
     public static void localMultiplying() {

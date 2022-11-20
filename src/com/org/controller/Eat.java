@@ -8,7 +8,6 @@ import com.org.model.island.vegetable.Vegatable;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Stream;
 
 
 public class Eat {
@@ -19,7 +18,7 @@ public class Eat {
     public void locationEat() {
         //we check if elements of HashSet are Carnivores or Hervibour
         //if carnivore we call animal.eat()
-        //remove animal element if was hunted or  eated(Eatable marker ) from animal list Location.
+        //remove animal element if was hunted or  eated(Eatable marker ) from animal list Location on hashset.
         //if herbivour we call animal.herbivour.eat
         // minus total kg of vegetable that the animal eat
         // we fix total weight vegetable and total eats
@@ -32,9 +31,6 @@ public class Eat {
                     System.out.println(eat + "%%%%%%%%%%%%%%%%%%%");
                     getAndRemove(eat);
 //                    //find and remove from list,  with HashSet of Class firstAny animal of this type
-
-//
-//
                 } else if (animal instanceof Herbivorous) {
                     System.out.println(animal.getClass().getSimpleName() + "  Eat");
                     ((Herbivorous) animal).eatVeggie(vegatable);
